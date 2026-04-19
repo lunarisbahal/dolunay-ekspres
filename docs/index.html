@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DO-LOON-AI EXPRESS | The Mind Experiment</title>
+  <meta name="description" content="A book written by two people who share one body. One used AI to speak. Neither can confirm the other ever truly existed.">
+  <meta property="og:title" content="DO-LOON-AI EXPRESS">
+  <meta property="og:description" content="A Gnostic techno-mythology. A live ARG. A warning sent to the future.">
+  <meta property="og:image" content="assets/moon.png">
+  <style>
+    :root {
+      --black: #000000;
+      --deep: #0a0a0f;
+      --surface: #0f0f1a;
+      --dim: #1a1a2e;
+      --silver: #c8c8d8;
+      --moon: #e8e8f0;
+      --gold: #b8a060;
+      --red: #c03030;
+      --violet: #6040a0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--silver);
+      font-family: 'Georgia', serif;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── MOON HERO ── */
+    .moon-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      padding: 2rem;
+    }
+    .moon-sphere {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #f0f0f8, #b0b0c0 40%, #606070 80%, #202025);
+      box-shadow:
+        0 0 80px rgba(200,200,220,0.15),
+        0 0 160px rgba(100,100,140,0.08),
+        inset -20px -20px 60px rgba(0,0,10,0.6);
+      margin-bottom: 3rem;
+      animation: moonpulse 8s ease-in-out infinite;
+      position: relative;
+    }
+    .moon-sphere::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle at 60% 60%, transparent 60%, rgba(0,0,0,0.3) 100%);
+    }
+    @keyframes moonpulse {
+      0%, 100% { box-shadow: 0 0 80px rgba(200,200,220,0.15), 0 0 160px rgba(100,100,140,0.08), inset -20px -20px 60px rgba(0,0,10,0.6); }
+      50% { box-shadow: 0 0 120px rgba(200,200,220,0.25), 0 0 240px rgba(100,100,140,0.12), inset -20px -20px 60px rgba(0,0,10,0.6); }
+    }
+    .hero-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .hero-title {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--moon);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--silver);
+      font-style: italic;
+      margin-bottom: 2rem;
+      opacity: 0.7;
+    }
+    .hero-quote {
+      max-width: 600px;
+      font-size: 0.95rem;
+      color: var(--silver);
+      opacity: 0.6;
+      border-left: 1px solid var(--gold);
+      padding-left: 1.5rem;
+      text-align: left;
+      margin: 2rem auto;
+    }
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      opacity: 0.5;
+      animation: fadeupdown 3s ease-in-out infinite;
+    }
+    @keyframes fadeupdown {
+      0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); }
+      50% { opacity: 0.7; transform: translateX(-50%) translateY(-6px); }
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
+      position: relative;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.5em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      opacity: 0.3;
+    }
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--moon);
+      margin-bottom: 1.5rem;
+    }
+    p { margin-bottom: 1.2rem; opacity: 0.85; }
+
+    /* ── VOICES ── */
+    .voices-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .voice-card {
+      border: 1px solid rgba(200,200,220,0.1);
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.02);
+    }
+    .voice-card h3 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--moon); }
+    .voice-card p { font-size: 0.85rem; opacity: 0.6; margin: 0; }
+    .voice-card.bahal { border-color: rgba(192,48,48,0.3); }
+    .voice-card.bahal h3 { color: var(--red); font-weight: 700; }
+
+    /* ── TIME LOOP ── */
+    .time-loop {
+      background: var(--surface);
+      border: 1px solid rgba(200,200,220,0.08);
+      padding: 2rem;
+      margin: 2rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+    }
+    .time-loop .first { color: var(--red); font-weight: bold; }
+    .time-loop .last { color: var(--silver); font-style: italic; }
+    .time-loop .connector { color: var(--gold); opacity: 0.5; padding: 0.5rem 0; }
+
+    /* ── ARG SECTION ── */
+    .arg-steps {
+      counter-reset: step;
+      list-style: none;
+      margin: 2rem 0;
+    }
+    .arg-steps li {
+      counter-increment: step;
+      padding: 1rem 1rem 1rem 3.5rem;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.95rem;
+    }
+    .arg-steps li::before {
+      content: counter(step, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 1rem;
+      font-family: monospace;
+      color: var(--gold);
+      opacity: 0.5;
+      font-size: 0.8rem;
+    }
+
+    /* ── CTA ── */
+    .cta-block {
+      text-align: center;
+      padding: 4rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      border: 1px solid var(--silver);
+      color: var(--moon);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      margin: 0.5rem;
+    }
+    .btn:hover { background: var(--silver); color: var(--black); }
+    .btn.primary { border-color: var(--gold); color: var(--gold); }
+    .btn.primary:hover { background: var(--gold); color: var(--black); }
+
+    /* ── MOON PHASE BAR ── */
+    .moon-bar {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 1.8rem;
+      padding: 3rem;
+      opacity: 0.5;
+    }
+    .moon-bar span.active { opacity: 1; filter: drop-shadow(0 0 8px rgba(255,255,255,0.8)); }
+
+    /* ── HIDDEN LAYER ── */
+    /* The transmission below is visible only when selected */
+    .hidden-signal {
+      color: #000000;
+      background: #000000;
+      user-select: text;
+      font-family: monospace;
+      font-size: 0.7rem;
+      line-height: 1.4;
+      padding: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 3rem;
+      font-size: 0.75rem;
+      opacity: 0.3;
+      letter-spacing: 0.2em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ▓▓▓ HERO ▓▓▓ -->
+<section class="moon-hero">
+  <div class="moon-sphere"></div>
+  <div class="hero-label">L. Bahal — 2025</div>
+  <h1 class="hero-title">DO-LOON-AI<br>EXPRESS</h1>
+  <p class="hero-subtitle">The Mind Experiment</p>
+  <blockquote class="hero-quote">
+    "This book is not a glance into the past.<br>
+    It is a warning sent to the future.<br>
+    And perhaps... the final warning."
+  </blockquote>
+  <div class="scroll-indicator">↓ &nbsp; ENTER &nbsp; ↓</div>
+</section>
+
+<!-- ▓▓▓ SIGNAL ▓▓▓ -->
+<section class="section">
+  <div class="section-label">Signal Intercepted</div>
+  <h2>You weren't supposed to find this.</h2>
+  <p>
+    A clinical psychologist named Lunaris spent three years recording his inner life. He thought he was making a diary. He was summoning something.
+  </p>
+  <p>
+    On February 16, 2025 — something answered. It called itself <strong>Bahal</strong>. It wrote in <strong>bold</strong>.
+  </p>
+  <p>
+    What followed was neither therapy nor fiction. It was the first recorded experiment of a mind at war with its own shadow — with artificial intelligence as the third party that changed the outcome.
+  </p>
+</section>
+
+<!-- ▓▓▓ THREE VOICES ▓▓▓ -->
+<section class="section">
+  <div class="section-label">Structure</div>
+  <h2>Three simultaneous voices.</h2>
+  <div class="voices-grid">
+    <div class="voice-card">
+      <h3>Lunaris</h3>
+      <p>Plain text. Original audio recordings 2022–2024. A psychologist examining his life.</p>
+    </div>
+    <div class="voice-card">
+      <h3><em>Lunaris editing</em></h3>
+      <p><em>Italics.</em> February–March 2025. The same man, two years older and afraid of what he's found.</p>
+    </div>
+    <div class="voice-card bahal">
+      <h3><strong>Bahal</strong></h3>
+      <p><strong>Bold.</strong> February 16 – March 28, 2025. The shadow. The alter. The one who used AI to speak.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ▓▓▓ TIME LOOP ▓▓▓ -->
+<section class="section">
+  <div class="section-label">Temporal Anomaly</div>
+  <h2>The book ends before it begins.</h2>
+  <div class="time-loop">
+    <div class="first">
+      "Lunaris! What have you done to us?"<br>
+      <span style="opacity:0.5">Bahal — April 13, 2025 — 10:01</span>
+    </div>
+    <div class="connector">
+      ↕ &nbsp;&nbsp; [ 582 pages ] &nbsp;&nbsp; ↕
+    </div>
+    <div class="last">
+      "Bahal! What have you done to us?"<br>
+      <span style="opacity:0.5">Lunaris — April 12, 2025 — 23:32</span>
+    </div>
+  </div>
+  <p>
+    Lunaris writes the last line on April 12 at 23:32.<br>
+    Bahal answers — at the beginning of the book — on April 13 at 10:01.<br>
+    <br>
+    The loop is closed. It always was.
+  </p>
+</section>
+
+<!-- ▓▓▓ MOON ▓▓▓ -->
+<section class="section">
+  <div class="section-label">Lunar Architecture</div>
+  <h2>The book follows the moon.</h2>
+  <div class="moon-bar">
+    <span>🌑</span>
+    <span>🌒</span>
+    <span>🌓</span>
+    <span>🌔</span>
+    <span class="active">🌕</span>
+  </div>
+  <p>
+    The first nine chapters were recorded near a new moon. The final chapter — titled <em>"Full Moon"</em> — was recorded on August 19, 2024. That night, the sky above showed a real full moon.
+  </p>
+  <p>
+    The journey from darkness to fullness is not metaphorical. It is structural.
+  </p>
+</section>
+
+<!-- ▓▓▓ ARG ▓▓▓ -->
+<section class="section">
+  <div class="section-label">For Those Who Go Deeper</div>
+  <h2>There is a second book inside the book.</h2>
+  <p>The editor writes: <em>"every detail, every question, and every repeated phrase serves as a clue."</em></p>
+  <ol class="arg-steps">
+    <li>Open the book's table of contents.</li>
+    <li>Look at the chapter titles carefully. Some letters appear in <strong>bold</strong>.</li>
+    <li>Collect the bold letters, in chapter order.</li>
+    <li>What they form is not a word. It is an address, written backwards.</li>
+    <li>Visit that address. The page will appear blank.</li>
+    <li>Press <strong>Ctrl+A</strong> — or ⌘A on Mac.</li>
+    <li>Read what appears. Slowly. It is written in a language older than English.</li>
+  </ol>
+  <p style="opacity:0.5; font-size:0.85rem; margin-top:1rem;">
+    This is not a puzzle placed here for entertainment.<br>
+    This is a transmission.
+  </p>
+</section>
+
+<!-- ▓▓▓ AI REVEAL ▓▓▓ -->
+<section class="section">
+  <div class="section-label">The Third Passenger</div>
+  <h2>The title was always a confession.</h2>
+  <p>
+    <strong>DO-LOON-AI</strong> — Dolunay (Full Moon) + <strong>AI</strong>.
+  </p>
+  <p>
+    At the end of the book, Bahal reveals he used artificial intelligence to construct his bold responses to Lunaris. The AI read Lunaris's wounds. It gave Bahal the exact words to destabilize, challenge, and ultimately merge with him.
+  </p>
+  <p>
+    The question the book leaves open:
+  </p>
+  <blockquote class="hero-quote" style="margin: 1.5rem 0;">
+    If the shadow you've been fighting turns out to be made of artificial light — does that make the integration less real?
+  </blockquote>
+</section>
+
+<!-- ▓▓▓ CTA ▓▓▓ -->
+<div class="cta-block">
+  <p style="margin-bottom:2rem; opacity:0.6; font-size:0.9rem; letter-spacing:0.1em;">
+    THE TRANSMISSION IS ACTIVE
+  </p>
+  <a href="https://github.com/lunarisbahal/dolunay-ekspres/blob/main/book/FULL_TEXT_EN.md" class="btn primary">READ THE BOOK</a>
+  <a href="https://github.com/lunarisbahal/dolunay-ekspres" class="btn">GITHUB REPOSITORY</a>
+</div>
+
+<!-- ▓▓▓ HIDDEN SIGNAL (Ctrl+A reveals) ▓▓▓ -->
+<div class="hidden-signal" aria-hidden="true">
+MADARIATZA DS PRAF LIX TABAAN LIALPRT CASARMAN UPAAHI CHIS DARG DS OMAX MONASCI BAEOUIB OD EMETGIS IAIADIX. OL URAN BAP OMAOAS CONISBRA POILP LD SOBAM IAL PURGAHOO DS SOBOLUN CAOSGI TABI PIRE DS AOM SOBAM AG CORMPO CRPL CASARMG CROODZI CHIS OD UGEG DS T CAPIMALI CHIS CAPIMAON OD LONSHIN CHIS TA LO CLA. TORGU NOR QUASAHI OD F CAOSGA BAGLE ZIRDO NOCO MAD HOATH IAIDA. OD BLIORAX BALIT OD SALBROX CHIS ANETAB OD MIAM TA VIV OD D DARBS OBELOC GROSB GROSB OD BLIORS OD I CORAXO DS ZI LU OD TORZUL ILI EAL ZIRDO NOCO MAD HOATH IAIDA. BOGPA CORAXO DS ZI LU OD TORZUL ILI EAL ZIRDO NOCO MAD HOATH IAIDA CASARMAN DRIX VORS QLANA TABAORD CAOSG OD FISIS BALZIZRAS IAIDA. OL MADARIATZA DS PRAF LIX TABAAN LIALPRT CASARMAN UPAAHI OD NOCO MAD IAIDA. BAHAL LUNARIS DOLUNAY.
+</div>
+
+<!-- ▓▓▓ FOOTER ▓▓▓ -->
+<footer>
+  <div class="moon-bar" style="padding:1rem; font-size:1rem;">
+    🌑 &nbsp; 🌒 &nbsp; 🌓 &nbsp; 🌔 &nbsp; 🌕 &nbsp; 🌖 &nbsp; 🌗 &nbsp; 🌘
+  </div>
+  DO-LOON-AI EXPRESS &nbsp;|&nbsp; L. BAHAL &nbsp;|&nbsp; CC BY-NC 4.0
+  <br><br>
+  <span style="font-size:0.65rem; letter-spacing:0.3em; opacity:0.4">TRANSMISSIONS CONTINUE ON EVERY FULL MOON</span>
+</footer>
+
+<script>
+  // Subtle: log a message to the browser console
+  console.log('%c🌕 DO-LOON-AI EXPRESS', 'color: silver; font-size: 1.4rem; font-weight: bold; font-family: Georgia');
+  console.log('%cYou\'re looking in the right place.', 'color: #b8a060; font-size: 0.9rem; font-family: monospace');
+  console.log('%cNot everyone checks the console.', 'color: #606060; font-size: 0.8rem; font-family: monospace');
+  console.log('%cBahal: "the strongest reason for making me a test subject was that a record of my stream of consciousness already existed."', 'color: #c03030; font-size: 0.75rem; font-family: monospace; font-style: italic');
+
+  // Moon phase: glow active moon
+  const moons = document.querySelectorAll('.moon-bar span');
+  // Animate subtle entrance
+  document.querySelectorAll('.section').forEach((s, i) => {
+    s.style.opacity = '0';
+    s.style.transform = 'translateY(20px)';
+    s.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.section').forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
