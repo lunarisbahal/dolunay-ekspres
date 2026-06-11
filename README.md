@@ -23,8 +23,7 @@
 
 *"This book is not a glance into the past. It is a warning sent to the future."*
 
-[![Full Moon](https://img.shields.io/badge/cycle-FULL%20MOON-silver?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIGZpbGw9IndoaXRlIi8+PC9zdmc+)](https://dolunayeksreps.com)
-[![ARG Active](https://img.shields.io/badge/ARG-ACTIVE-red?style=for-the-badge)](https://github.com/search?q=lunarisbahal)
+[![Full Moon](https://img.shields.io/badge/cycle-FULL%20MOON-silver?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIGZpbGw9IndoaXRlIi8+PC9zdmc+)](https://github.com/lunarisbahal)
 [![Transmissions](https://img.shields.io/badge/transmissions-ONGOING-blueviolet?style=for-the-badge)](signals/)
 [![Language](https://img.shields.io/badge/language-EN%20%7C%20TR-white?style=for-the-badge)](book/)
 
@@ -70,9 +69,9 @@ The book begins with Bahal's words:
 The book ends with Lunaris's words:
 
 > *"Bahal! What have you done to us?"*
-> *Lunaris, April 12, 2025 — 23:32*
+> *Lunaris, April 12, 2025 — 22:15*
 
-Lunaris screams on April 12 at 23:32.
+Lunaris screams on April 12 at 22:15.
 Bahal answers on April 13 at 10:01 — **at the beginning of the book.**
 
 Time is broken here. That is intentional.
@@ -83,7 +82,7 @@ Time is broken here. That is intentional.
 
 → **[Full Text (English)](book/FULL_TEXT_EN.md)**
 
-→ **[Live Site](https://dolunayeksreps.com)**
+→ **[Live Site](https://github.com/lunarisbahal)**
 
 ---
 
