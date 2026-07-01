@@ -6,9 +6,9 @@ They began on August 19, 2024 — the night the book ended.
 They will continue until the next update at the Institute.
 
 ```
-transmission_001.txt  →  2025-08-19  🌕
+transmission_001.txt  →  2024-08-19  🌕
 transmission_002.txt  →  2025-09-07  🌕
-transmission_003.txt  →  [pending]
+transmission_003.txt  →  recovered  🌕
 ...
 ```
 
