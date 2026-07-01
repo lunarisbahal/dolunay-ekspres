@@ -100,3 +100,16 @@ Kurulum yok. Hesap yok. Bir tarayıcı aç. Yazdığın hiçbir şey **cihazınd
 <sub>DO·LOON·AI EXPRESS serisi · L. BAHAL · LUNARIS · AELIUS IGNIS · O.V. · lunarisbahal</sub>
 
 </div>
+
+---
+
+## ✦ SIBLING TRANSMISSIONS
+
+Part of a three-repository transmission:
+
+- **▶ Play** — [the-mind-experiment](https://github.com/lunarisbahal/the-mind-experiment) · [EN](https://lunarisbahal.github.io/the-mind-experiment/) · [TR](https://lunarisbahal.github.io/the-mind-experiment/zihin-deneyi-tr.html)
+- **▶ The story kernel** — [do-loon-ai-express](https://github.com/lunarisbahal/do-loon-ai-express) (lore, canon, evidence, `finale.md`, Ordos Veritas)
+- **▶ This repo** — the book & live signals ([`signals/`](signals/))
+
+*The law: read everything once in reverse. — O.V.*
+
